@@ -36,9 +36,6 @@ void DrawCoordinate()
 }
 
 void Brown() {
-	GLfloat light_pos[] = { 7.5, 4.0, 7.5, 1.0 };
-	glLightfv(GL_LIGHT0, GL_POSITION, light_pos);
-
 	//Thiết lập màu môi trường của vật liệu
 	GLfloat ambient[] = { 0.8, 0.5, 0.5, 1.0 };
 	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient);
@@ -48,9 +45,6 @@ void Brown() {
 }
 
 void Black() {
-	GLfloat light_pos[] = { 7.5, 4.0, 7.5, 1.0 };
-	glLightfv(GL_LIGHT1, GL_POSITION, light_pos);
-
 	//Thiết lập màu môi trường của vật liệu
 	GLfloat ambient[] = { 0.0, 0.0, 0.0, 1.0 };
 	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient);
@@ -60,9 +54,6 @@ void Black() {
 }
 
 void White() {
-	GLfloat light_pos[] = { 7.5, 4.0, 7.5, 1.0 };
-	glLightfv(GL_LIGHT2, GL_POSITION, light_pos);
-
 	//Thiết lập màu môi trường của vật liệu
 	GLfloat ambient[] = { 1.0, 1.0, 1.0, 1.0 };
 	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient);
@@ -72,9 +63,6 @@ void White() {
 }
 
 void SkyBlue() {
-	GLfloat light_pos[] = { 7.5, 4.0, 7.5, 1.0 };
-	glLightfv(GL_LIGHT3, GL_POSITION, light_pos);
-
 	//Thiết lập màu môi trường của vật liệu
 	GLfloat ambient[] = { 0.0, 0.5, 1.0, 1.0 };
 	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient);
@@ -84,14 +72,11 @@ void SkyBlue() {
 }
 
 void Gray() {
-	GLfloat light_pos[] = { 7.5, 4.0, 7.5, 1.0 };
-	glLightfv(GL_LIGHT4, GL_POSITION, light_pos);
-
 	//Thiết lập màu môi trường của vật liệu
-	GLfloat ambient[] = { 0.7, 0.7, 0.7, 1.0 };
+	GLfloat ambient[] = { 0.8, 0.8, 0.8, 1.0 };
 	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient);
 	//Thiết lập độ khuyếch tán màu
-	GLfloat diff_use[] = { 0.7, 0.7, 0.7, 1.0 };
+	GLfloat diff_use[] = { 0.8, 0.8, 0.8, 1.0 };
 	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diff_use);
 }
 
@@ -573,77 +558,143 @@ void drawTrashCan() {
 }
 
 void drawBook() {
-	Gray();
+	//màu
+	//Thiết lập màu môi trường của vật liệu
+	GLfloat ambient1[] = { 1.0, 0.0, 0.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient1);
+	//Thiết lập độ khuyếch tán màu
+	GLfloat diff_use1[] = { 1.0, 0.0, 0.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diff_use1);
 	glPushMatrix();
 	glTranslatef(0.4, 2.5, 1.0);
 	glScalef(0.6, 1.0, 0.2);
 	glutSolidCube(1.0);
 	glPopMatrix();
 
-	Brown();
+	//màu
+	//Thiết lập màu môi trường của vật liệu
+	GLfloat ambient2[] = { 0.0, 1.0, 0.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient2);
+	//Thiết lập độ khuyếch tán màu
+	GLfloat diff_use2[] = { 0.0, 1.0, 0.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diff_use2);
 	glPushMatrix();
 	glTranslatef(0.35, 2.6, 1.23);
 	glScalef(0.5, 1.2, 0.2);
 	glutSolidCube(1.0);
 	glPopMatrix();
 
-	SkyBlue();
+	//màu
+	//Thiết lập màu môi trường của vật liệu
+	GLfloat ambient3[] = { 0.0, 0.0, 1.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient3);
+	//Thiết lập độ khuyếch tán màu
+	GLfloat diff_use3[] = { 0.0, 0.0, 1.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diff_use3);
 	glPushMatrix();
 	glTranslatef(0.5, 2.5, 1.46);
 	glScalef(0.8, 1.0, 0.2);
 	glutSolidCube(1.0);
 	glPopMatrix();
 
-	Brown();
+	//màu
+	//Thiết lập màu môi trường của vật liệu
+	GLfloat ambient4[] = { 1.0, 1.0, 0.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient4);
+	//Thiết lập độ khuyếch tán màu
+	GLfloat diff_use4[] = { 1.0, 1.0, 0.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diff_use4);
 	glPushMatrix();
 	glTranslatef(0.4, 2.5, 1.69);
 	glScalef(0.6, 1.0, 0.2);
 	glutSolidCube(1.0);
 	glPopMatrix();
 
-	Gray();
+	//màu
+	//Thiết lập màu môi trường của vật liệu
+	GLfloat ambient5[] = { 1.0, 0.0, 1.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient5);
+	//Thiết lập độ khuyếch tán màu
+	GLfloat diff_use5[] = { 1.0, 0.0, 1.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diff_use5);
 	glPushMatrix();
 	glTranslatef(0.45, 2.4, 1.92);
 	glScalef(0.7, 0.8, 0.2);
 	glutSolidCube(1.0);
 	glPopMatrix();
 
-	SkyBlue();
+	//màu
+	//Thiết lập màu môi trường của vật liệu
+	GLfloat ambient6[] = { 0.0, 1.0, 1.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient6);
+	//Thiết lập độ khuyếch tán màu
+	GLfloat diff_use6[] = { 0.0, 1.0, 1.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diff_use6);
 	glPushMatrix();
 	glTranslatef(0.4, 2.5, 2.15);
 	glScalef(0.6, 1.0, 0.2);
 	glutSolidCube(1.0);
 	glPopMatrix();
 
-	White();
+	//màu
+	//Thiết lập màu môi trường của vật liệu
+	GLfloat ambient7[] = { 0.0, 0.5, 1.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient7);
+	//Thiết lập độ khuyếch tán màu
+	GLfloat diff_use7[] = { 0.0, 0.5, 1.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diff_use7);
 	glPushMatrix();
 	glTranslatef(0.35, 2.6, 2.38);
 	glScalef(0.5, 1.2, 0.2);
 	glutSolidCube(1.0);
 	glPopMatrix();
 
-	Brown();
+	//màu
+	//Thiết lập màu môi trường của vật liệu
+	GLfloat ambient8[] = { 0.5, 0.0, 1.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient8);
+	//Thiết lập độ khuyếch tán màu
+	GLfloat diff_use8[] = { 0.5, 0.0, 1.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diff_use8);
 	glPushMatrix();
 	glTranslatef(0.5, 2.5, 2.61);
 	glScalef(0.8, 1.0, 0.2);
 	glutSolidCube(1.0);
 	glPopMatrix();
 
-	Gray();
+	//màu
+	//Thiết lập màu môi trường của vật liệu
+	GLfloat ambient9[] = { 0.4, 0.7, 1.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient9);
+	//Thiết lập độ khuyếch tán màu
+	GLfloat diff_use9[] = { 0.4, 0.7, 1.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diff_use9);
 	glPushMatrix();
 	glTranslatef(0.4, 2.5, 2.84);
 	glScalef(0.6, 1.0, 0.2);
 	glutSolidCube(1.0);
 	glPopMatrix();
 
-	Brown();
+	//màu
+	//Thiết lập màu môi trường của vật liệu
+	GLfloat ambient10[] = { 0.7, 0.1, 1.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient10);
+	//Thiết lập độ khuyếch tán màu
+	GLfloat diff_use10[] = { 0.7, 0.1, 1.0, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diff_use10);
 	glPushMatrix();
 	glTranslatef(0.45, 2.4, 3.07);
 	glScalef(0.7, 0.8, 0.2);
 	glutSolidCube(1.0);
 	glPopMatrix();
 
-	SkyBlue();
+	//màu
+	//Thiết lập màu môi trường của vật liệu
+	GLfloat ambient11[] = { 0.4, 0.6, 0.8, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, ambient11);
+	//Thiết lập độ khuyếch tán màu
+	GLfloat diff_use11[] = { 0.4, 0.6, 0.8, 1.0 };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diff_use11);
 	glPushMatrix();
 	glTranslatef(0.5, 2.15, 4.1);
 	glScalef(0.7, 0.3, 1.0);
@@ -657,39 +708,39 @@ void ReShape(int width, int height)
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	float ratio = (float)width / (float)height;
-	gluPerspective(30.0, ratio, 1, 180.0);
+	gluPerspective(30.0, ratio, 1, 100.0);
 	glMatrixMode(GL_MODELVIEW);
 }
 
 void keyPressed(unsigned char key, int x, int y) {
     switch (key) {
     case '1':
-        glEnable(GL_LIGHT5);
+        glEnable(GL_LIGHT1);
         break;
     case '2':
-        glEnable(GL_LIGHT6);
+        glEnable(GL_LIGHT2);
         break;
     case '3':
-        glEnable(GL_LIGHT7);
+        glEnable(GL_LIGHT3);
         break;
 	case '4':
-		glDisable(GL_LIGHT5);
+		glDisable(GL_LIGHT1);
 		break;
 	case '5':
-		glDisable(GL_LIGHT6);
+		glDisable(GL_LIGHT2);
 		break;
 	case '6':
-		glDisable(GL_LIGHT7);
+		glDisable(GL_LIGHT3);
 		break;
 	case 'q':
-		glEnable(GL_LIGHT5);
-		glEnable(GL_LIGHT6);
-		glEnable(GL_LIGHT7);
+		glEnable(GL_LIGHT1);
+		glEnable(GL_LIGHT2);
+		glEnable(GL_LIGHT3);
 		break;
 	case 'e':
-		glDisable(GL_LIGHT5);
-		glDisable(GL_LIGHT6);
-		glDisable(GL_LIGHT7);
+		glDisable(GL_LIGHT1);
+		glDisable(GL_LIGHT2);
+		glDisable(GL_LIGHT3);
 		break;
     case 'u':
         eyeX += 0.1;
@@ -716,39 +767,83 @@ void keyPressed(unsigned char key, int x, int y) {
 void Init()
 {
 	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
 	glEnable(GL_LIGHT1);
-	glEnable(GL_LIGHT2);
-	glEnable(GL_LIGHT3);
-	glEnable(GL_LIGHT4);
-	glEnable(GL_LIGHT5);
+	glEnable(GL_DEPTH_TEST);
+	
 
 	// Nguồn 1
 	float light_pos1[] = { 7.5, 7.5, 7.5, 1.0 };
-	glLightfv(GL_LIGHT5, GL_POSITION, light_pos1);
-	GLfloat ambient1[] = { 1.0, 1.0, 1.0, 1.0 };
-	GLfloat diffuse1[] = { 1.0, 1.0, 1.0, 1.0 };
-	GLfloat specular1[] = { 1.0, 1.0, 1.0, 1.0 };
-	glLightfv(GL_LIGHT5, GL_AMBIENT, ambient1);
-	glLightfv(GL_LIGHT5, GL_DIFFUSE, diffuse1);
-	glLightfv(GL_LIGHT5, GL_SPECULAR, specular1);
+	glLightfv(GL_LIGHT1, GL_POSITION, light_pos1);
+	GLfloat ambient1[] = { 0.2, 0.2, 0.0, 1.0 };
+	GLfloat diffuse1[] = { 0.2, 0.2, 0.0, 1.0 };
+	GLfloat specular1[] = { 0.2, 0.2, 0.0, 1.0 };
+	glLightfv(GL_LIGHT1, GL_AMBIENT, ambient1);
+	glLightfv(GL_LIGHT1, GL_DIFFUSE, diffuse1);
+	glLightfv(GL_LIGHT1, GL_SPECULAR, specular1);
 
 	//GL_SPOT_EXPONENT: độ tỏa rộng của vùng sáng mờ hay độ tập trung chùm sáng
 	// -giá trị càng cao vùng sáng càng sắc nét (chùm sáng tập trung vào một vùng diện tích nhỏ)
 	// -giá trị càng thấp vùng sáng càng mờ (chùm sáng tỏa rộng ra diện tích lớn hơn)
-	GLfloat spotExp1 = 10.0;
-	glLightf(GL_LIGHT5, GL_SPOT_EXPONENT, spotExp1);
+	GLfloat spotExp1 = 100.0;
+	glLightf(GL_LIGHT1, GL_SPOT_EXPONENT, spotExp1);
 	//GL_SPOT_CUTOFF: góc chiếu giới hạn
 	//- giá trị càng nhỏ: góc chiếu càng hẹp, tạo ra chùm sáng hẹp
 	//- giá trị càng lớn: góc chiếu càng lớn, vùng được chiếu sáng càng rộng
-	GLfloat spotCutoff1 = 40.0;
-	glLightf(GL_LIGHT5, GL_SPOT_CUTOFF, spotCutoff1);
+	GLfloat spotCutoff1 = 100.0;
+	glLightf(GL_LIGHT1, GL_SPOT_CUTOFF, spotCutoff1);
 	//GL_SPOT_DIRECTION: hướng chiếu sáng của nguồn sáng dạng spot
-	float light_dir1[3] = { 0.0, -1.0, 0.0 };
-	glLightfv(GL_LIGHT5, GL_SPOT_DIRECTION, light_dir1); 
+	float light_dir1[3] = {0.0, -1.0, 0.0 };
+	glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, light_dir1); 
 
 
-	glEnable(GL_DEPTH_TEST);
+	// Nguồn 2
+	float light_pos2[] = { 7.5, 4.0, 0.1, 1.0 };
+	glLightfv(GL_LIGHT2, GL_POSITION, light_pos2);
+	GLfloat ambient2[] = { 0.0, 0.2, 0.2, 1.0 };
+	GLfloat diffuse2[] = { 0.0, 0.2, 0.2, 1.0 };
+	GLfloat specular2[] = { 0.0, 0.2, 0.2, 1.0 };
+	glLightfv(GL_LIGHT2, GL_AMBIENT, ambient2);
+	glLightfv(GL_LIGHT2, GL_DIFFUSE, diffuse2);
+	glLightfv(GL_LIGHT2, GL_SPECULAR, specular2);
+
+	//GL_SPOT_EXPONENT: độ tỏa rộng của vùng sáng mờ hay độ tập trung chùm sáng
+	// -giá trị càng cao vùng sáng càng sắc nét (chùm sáng tập trung vào một vùng diện tích nhỏ)
+	// -giá trị càng thấp vùng sáng càng mờ (chùm sáng tỏa rộng ra diện tích lớn hơn)
+	GLfloat spotExp2 = 20.0;
+	glLightf(GL_LIGHT2, GL_SPOT_EXPONENT, spotExp2);
+	//GL_SPOT_CUTOFF: góc chiếu giới hạn
+	//- giá trị càng nhỏ: góc chiếu càng hẹp, tạo ra chùm sáng hẹp
+	//- giá trị càng lớn: góc chiếu càng lớn, vùng được chiếu sáng càng rộng
+	GLfloat spotCutoff2 = 30.0;
+	glLightf(GL_LIGHT2, GL_SPOT_CUTOFF, spotCutoff2);
+	//GL_SPOT_DIRECTION: hướng chiếu sáng của nguồn sáng dạng spot
+	float light_dir2[3] = { 0.0, 0.0,- 1.0 };
+	glLightfv(GL_LIGHT2, GL_SPOT_DIRECTION, light_dir2);
+
+
+	// Nguồn 3
+	float light_pos3[] = { -15.0, 10.0, 3.75, 1.0 };
+	glLightfv(GL_LIGHT3, GL_POSITION, light_pos3);
+	GLfloat ambient3[] = { 0.2, 0.0, 0.2, 1.0 };
+	GLfloat diffuse3[] = { 0.2, 0.0, 0.2, 1.0 };
+	GLfloat specular3[] = { 0.2, 0.0, 0.2, 1.0 };
+	glLightfv(GL_LIGHT3, GL_AMBIENT, ambient3);
+	glLightfv(GL_LIGHT3, GL_DIFFUSE, diffuse3);
+	glLightfv(GL_LIGHT3, GL_SPECULAR, specular3);
+
+	//GL_SPOT_EXPONENT: độ tỏa rộng của vùng sáng mờ hay độ tập trung chùm sáng
+	// -giá trị càng cao vùng sáng càng sắc nét (chùm sáng tập trung vào một vùng diện tích nhỏ)
+	// -giá trị càng thấp vùng sáng càng mờ (chùm sáng tỏa rộng ra diện tích lớn hơn)
+	GLfloat spotExp3 = 50.0;
+	glLightf(GL_LIGHT3, GL_SPOT_EXPONENT, spotExp3);
+	//GL_SPOT_CUTOFF: góc chiếu giới hạn
+	//- giá trị càng nhỏ: góc chiếu càng hẹp, tạo ra chùm sáng hẹp
+	//- giá trị càng lớn: góc chiếu càng lớn, vùng được chiếu sáng càng rộng
+	GLfloat spotCutoff3 = 100.0;
+	glLightf(GL_LIGHT3, GL_SPOT_CUTOFF, spotCutoff3);
+	//GL_SPOT_DIRECTION: hướng chiếu sáng của nguồn sáng dạng spot
+	float light_dir3[3] = { 1.0, 0.0, 0.0 };
+	glLightfv(GL_LIGHT3, GL_SPOT_DIRECTION, light_dir3);
 }
 
 void mouseButton(int button, int state, int x, int y) {
