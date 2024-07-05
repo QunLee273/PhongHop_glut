@@ -1,4 +1,4 @@
 ﻿  PhongHop.cpp
-E:\Kỹ thuật đồ họa máy tính\BTL_DoHoa\BTL_DoHoa\PhongHop.cpp(918,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
-E:\Kỹ thuật đồ họa máy tính\BTL_DoHoa\BTL_DoHoa\PhongHop.cpp(922,19): warning C4566: character represented by universal-character-name '\u1ECD' cannot be represented in the current code page (1252)
+E:\Kỹ thuật đồ họa máy tính\BTL_DoHoa\BTL_DoHoa\PhongHop.cpp(929,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+E:\Kỹ thuật đồ họa máy tính\BTL_DoHoa\BTL_DoHoa\PhongHop.cpp(933,19): warning C4566: character represented by universal-character-name '\u1ECD' cannot be represented in the current code page (1252)
   BTL_DoHoa.vcxproj -> E:\Kỹ thuật đồ họa máy tính\BTL_DoHoa\Debug\BTL_DoHoa.exe

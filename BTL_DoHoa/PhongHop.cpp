@@ -103,13 +103,13 @@ void drawWall() {
 	glEnd();
 
 	// tường phải
-	glColor3f(1.0, 1.0, 1.0);
+	/*glColor3f(1.0, 1.0, 1.0);
 	glBegin(GL_QUADS);
 	glVertex3f(15.0, 0.0, 0.0);
 	glVertex3f(15.0, 0.0, 15.0);
 	glVertex3f(15.0, 8.0, 15.0);
 	glVertex3f(15.0, 8.0, 0.0);
-	glEnd();
+	glEnd();*/
 }
 
 void drawFloorCell() {
@@ -311,9 +311,9 @@ void drawTable() {
 	// mặt bàn
 	glPushMatrix();
 	glTranslatef(7.5, 2.5, 7.5);
-	glScalef(3.0, 0.5, 5.0);
+	glScalef(3.0, 0.2, 5.0);
 	glutSolidCube(1.0);
-	glPopMatrix(); // Lấy ma trận gốc từ đỉnh của ngăn xếp
+	glPopMatrix();// Lấy ma trận gốc từ đỉnh của ngăn xếp
 
 	// chân bàn
 	glPushMatrix();// Lưu ma trận hiện hành vào ngăn xếp
@@ -353,12 +353,10 @@ void drawCabinet() {
 
 	glLineWidth(2.0); // Đặt độ rộng của đường
 	glBegin(GL_LINES);
-	glVertex3f(2.1, 2.02, 4.5);
-	glVertex3f(2.1, 0.02, 4.5);
-	
-	glVertex3f(2.1, 2.02, 2.5);
-	glVertex3f(2.1, 0.02, 2.5);
-	glEnd();
+	glVertex3f(0.0, 0.0, 0.0);
+	glVertex3f(15.0, 0.0, 0.0);
+	glVertex3f(15.0, 8.0, 0.0);
+	glVertex3f(0.0, 8.0, 0.0);
 }
 
 void drawShelf() {
@@ -444,7 +442,7 @@ void drawDoor() {
 	Brown();
 
 	glPushMatrix();
-	glTranslatef(15.0, 2.7, 8.0);
+	glTranslatef(0.1, 2.78, 8.0);
 	glScalef(0.1, 5.49, 2.98);
 	glColor3f(0.8, 0.4, 0.4);
 	glutSolidCube(1.0);
@@ -477,14 +475,14 @@ void drawFrame() {
 	glVertex3f(0.0, 7.0, 7.5);
 
 	// khung cửa ra vào
-	glVertex3f(15.0, 0.01, 6.5);
-	glVertex3f(15.0, 5.51, 6.5);
+	glVertex3f(15.0, 0.08, 6.5);
+	glVertex3f(15.0, 5.58, 6.5);
 
-	glVertex3f(15.0, 5.51, 6.5);
-	glVertex3f(15.0, 5.51, 9.5);
+	glVertex3f(15.0, 5.58, 6.5);
+	glVertex3f(15.0, 5.58, 9.5);
 
-	glVertex3f(15.0, 5.51, 9.5);
-	glVertex3f(15.0, 0.01, 9.5);
+	glVertex3f(15.0, 5.58, 9.5);
+	glVertex3f(15.0, 0.08, 9.5);
 	glEnd();
 
 }
@@ -529,6 +527,7 @@ void drawProjectScreen() {
 
 	// màn chiếu
 	glBegin(GL_QUADS);
+
 	glVertex3f(4.5, 2.0, 0.25);
 	glVertex3f(10.5, 2.0, 0.25);
 	glVertex3f(10.5, 6.0, 0.25);
@@ -566,7 +565,7 @@ void drawBook() {
 	GLfloat diff_use1[] = { 1.0, 0.0, 0.0, 1.0 };
 	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, diff_use1);
 	glPushMatrix();
-	glTranslatef(0.4, 2.5, 1.0);
+	glTranslatef(13.89, 2.26, 0.2);
 	glScalef(0.6, 1.0, 0.2);
 	glutSolidCube(1.0);
 	glPopMatrix();
@@ -732,6 +731,18 @@ void keyPressed(unsigned char key, int x, int y) {
 	case '6':
 		glDisable(GL_LIGHT3);
 		break;
+	case '7':
+		eyeX = 70.0, eyeY = 0.0, eyeZ = 0.0;
+		break;
+	case '8':
+		eyeX = -50.0, eyeY = 0.0, eyeZ = 0.0;
+		break;
+	case '9':
+		eyeX = 0.0, eyeY = 0.0, eyeZ = -60.0;
+		break;
+	case '0':
+		eyeX = 10.0, eyeY = 10.0, eyeZ = 50.0;
+		break;
 	case 'q':
 		glEnable(GL_LIGHT1);
 		glEnable(GL_LIGHT2);
@@ -774,9 +785,9 @@ void Init()
 	// Nguồn 1
 	float light_pos1[] = { 7.5, 7.5, 7.5, 1.0 };
 	glLightfv(GL_LIGHT1, GL_POSITION, light_pos1);
-	GLfloat ambient1[] = { 0.2, 0.2, 0.0, 1.0 };
-	GLfloat diffuse1[] = { 0.2, 0.2, 0.0, 1.0 };
-	GLfloat specular1[] = { 0.2, 0.2, 0.0, 1.0 };
+	GLfloat ambient1[] = { 0.0, 0.0, 1.0, 1.0 };// Cấu hình ánh sáng môi trường (ambient light)
+	GLfloat diffuse1[] = { 0.2, 0.2, 0.0, 1.0 };// Cấu hình ánh sáng khuếch tán (diffuse light)
+	GLfloat specular1[] = { 0.2, 0.2, 0.0, 1.0 };// Cấu hình ánh sáng phản xạ (specular light)
 	glLightfv(GL_LIGHT1, GL_AMBIENT, ambient1);
 	glLightfv(GL_LIGHT1, GL_DIFFUSE, diffuse1);
 	glLightfv(GL_LIGHT1, GL_SPECULAR, specular1);
@@ -784,7 +795,7 @@ void Init()
 	//GL_SPOT_EXPONENT: độ tỏa rộng của vùng sáng mờ hay độ tập trung chùm sáng
 	// -giá trị càng cao vùng sáng càng sắc nét (chùm sáng tập trung vào một vùng diện tích nhỏ)
 	// -giá trị càng thấp vùng sáng càng mờ (chùm sáng tỏa rộng ra diện tích lớn hơn)
-	GLfloat spotExp1 = 100.0;
+	GLfloat spotExp1 = 10.0;
 	glLightf(GL_LIGHT1, GL_SPOT_EXPONENT, spotExp1);
 	//GL_SPOT_CUTOFF: góc chiếu giới hạn
 	//- giá trị càng nhỏ: góc chiếu càng hẹp, tạo ra chùm sáng hẹp
@@ -799,9 +810,9 @@ void Init()
 	// Nguồn 2
 	float light_pos2[] = { 7.5, 4.0, 0.1, 1.0 };
 	glLightfv(GL_LIGHT2, GL_POSITION, light_pos2);
-	GLfloat ambient2[] = { 0.0, 0.2, 0.2, 1.0 };
-	GLfloat diffuse2[] = { 0.0, 0.2, 0.2, 1.0 };
-	GLfloat specular2[] = { 0.0, 0.2, 0.2, 1.0 };
+	GLfloat ambient2[] = { 0.0, 0.2, 0.2, 1.0 };// Cấu hình ánh sáng môi trường (ambient light)
+	GLfloat diffuse2[] = { 0.0, 0.2, 0.2, 1.0 };// Cấu hình ánh sáng khuếch tán (diffuse light)
+	GLfloat specular2[] = { 0.0, 0.2, 0.2, 1.0 };// Cấu hình ánh sáng phản xạ (specular light)
 	glLightfv(GL_LIGHT2, GL_AMBIENT, ambient2);
 	glLightfv(GL_LIGHT2, GL_DIFFUSE, diffuse2);
 	glLightfv(GL_LIGHT2, GL_SPECULAR, specular2);
@@ -824,9 +835,9 @@ void Init()
 	// Nguồn 3
 	float light_pos3[] = { -15.0, 10.0, 3.75, 1.0 };
 	glLightfv(GL_LIGHT3, GL_POSITION, light_pos3);
-	GLfloat ambient3[] = { 0.2, 0.0, 0.2, 1.0 };
-	GLfloat diffuse3[] = { 0.2, 0.0, 0.2, 1.0 };
-	GLfloat specular3[] = { 0.2, 0.0, 0.2, 1.0 };
+	GLfloat ambient3[] = { 0.2, 0.0, 0.2, 1.0 };// Cấu hình ánh sáng môi trường (ambient light)
+	GLfloat diffuse3[] = { 0.2, 0.0, 0.2, 1.0 };// Cấu hình ánh sáng khuếch tán (diffuse light)
+	GLfloat specular3[] = { 0.2, 0.0, 0.2, 1.0 };// Cấu hình ánh sáng phản xạ (specular light)
 	glLightfv(GL_LIGHT3, GL_AMBIENT, ambient3);
 	glLightfv(GL_LIGHT3, GL_DIFFUSE, diffuse3);
 	glLightfv(GL_LIGHT3, GL_SPECULAR, specular3);
